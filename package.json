@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/SimoNonnis/maybe-type/issues"
   },
-  "homepage": "https://github.com/SimoNonnis/maybe-type#readme"
+  "homepage": "https://github.com/SimoNonnis/maybe-type#readme",
+  "dependencies": {
+    "crocks": "^0.9.4"
+  }
 }
