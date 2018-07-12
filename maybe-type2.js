@@ -1,4 +1,4 @@
-const Maybe = require('crocks/Maybe');
+// const Maybe = require('crocks/Maybe');
 const safe = require('crocks/Maybe/safe');
 const isNumber = require('crocks/predicates/isNumber');
 const isString = require('crocks/predicates/isString');
