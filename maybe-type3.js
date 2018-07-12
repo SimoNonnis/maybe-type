@@ -1,20 +1,15 @@
 const safe = require('crocks/Maybe/safe');
 const isNumber = require('crocks/predicates/isNumber');
-const isString = require('crocks/predicates/isString');
 
 const inc = n => n + 1;
-const toUpper = s => s.toUpperCase();
+const dbl = n => n * 2;
+const incDbl = n => {
+  const safeN = safe(isNumber, n);
+  return safeN
+    .map(inc)
+    .map(dbl)
+    .option(0);
+};
 
-// const isNumber = n => typeof n === 'number';
-// const isString = s => typeof s === 'string';
-// const safe = (pred, val) => (pred(val) ? Maybe.Just(val) : Maybe.Nothing());
-const safeN = safe(isNumber);
-const safeS = safe(isString);
-
-const inputN = safeN(10);
-const resultN = inputN.map(inc);
-console.log(resultN);
-
-const inputS = safeS('Hello world');
-const resultS = inputS.map(toUpper);
-console.log(resultS);
+const result = incDbl(9);
+console.log(result);
